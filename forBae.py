@@ -11,10 +11,12 @@ print(compareStrArr[0][0])
 
 f = open("filePath.txt", "r")
 lines = f.readlines()
-print(lines)
 
 #문자열 정리
 for line in lines:
+    for reText in compareStrArr:
+
+    pathReplace = line.replace()
     print(line)
 
 print(lines[0])

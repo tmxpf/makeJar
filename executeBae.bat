@@ -1,1 +1,1 @@
-jar cvf deployjar/deployJar.jar JavaStudy/src/com/company/LamdaStudy.java
+jar cvf deployjar/deployJar.jar  JavaStudy/src/com/company/Main.java JavaStudy/JavaStudy.iml JavaStudy/src/com/company/LamdaStudy.java 
