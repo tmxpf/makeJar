@@ -32,6 +32,8 @@ public class forBae {
             // svn에서 가져온 파일경로 모음 오픈
             File svnPathFile = new File("filePath.txt");
             scanner = new Scanner(svnPathFile);
+
+            System.out.println("=============start : path transformation=============");
             while(scanner.hasNextLine()) {
                 String textLine = scanner.nextLine();
                 String convertedPath = "";
@@ -43,6 +45,7 @@ public class forBae {
                 resultPath.add(convertedPath);
                 System.out.println("after path : " + convertedPath);
             }
+            System.out.println("=============end : path transformation=============");
 
             //jar파일 만들기 위한 명령어 입력 및 batch파일 생성
             File resultPathFile = new File("executeBae.bat");
@@ -51,11 +54,16 @@ public class forBae {
             if(resultPathFile.isFile() && resultPathFile.canWrite()) {
                 bufferedWriter.write("jar cvf deployjar/deployJar.jar ");
 
+                System.out.println("=============start : create batch file=============");
+                System.out.println("jar cvf deployjar/deployJar.jar");
+
                 for(String text : resultPath) {
                     if(text != null) {
                         bufferedWriter.write(text);
+                        System.out.println(text);
                     }
                 }
+                System.out.println("=============end : create batch file=============");
             }
 
         } catch(Exception e) {
