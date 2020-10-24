@@ -1,0 +1,3 @@
+JavaStudy/JavaStudy.iml
+JavaStudy/src/com/company/LamdaStudy.java
+JavaStudy/src/com/company/Main.java

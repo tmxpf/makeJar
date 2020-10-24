@@ -4,7 +4,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.*;
 
-public class forBae {
+public class run {
 
     public static void main(String[] args) {
 
@@ -48,13 +48,13 @@ public class forBae {
             System.out.println("=============end : path transformation=============");
 
             //jar파일 만들기 위한 명령어 입력 및 batch파일 생성
-            File resultPathFile = new File("executeBae.bat");
+            File resultPathFile = new File("compression.bat");
             bufferedWriter = new BufferedWriter(new FileWriter(resultPathFile));
 
             if(resultPathFile.isFile() && resultPathFile.canWrite()) {
                 bufferedWriter.write("jar cvf deployjar/deployJar.jar ");
 
-                System.out.println("=============start : create batch file=============");
+                System.out.println("=============start : create batch command=============");
                 System.out.println("jar cvf deployjar/deployJar.jar");
 
                 for(String text : resultPath) {
@@ -63,7 +63,7 @@ public class forBae {
                         System.out.println(text);
                     }
                 }
-                System.out.println("=============end : create batch file=============");
+                System.out.println("=============end : create batch command=============");
             }
 
         } catch(Exception e) {

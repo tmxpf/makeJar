@@ -14,9 +14,6 @@ lines = f.readlines()
 
 #문자열 정리
 for line in lines:
-    for reText in compareStrArr:
-
-    pathReplace = line.replace()
     print(line)
 
 print(lines[0])
@@ -25,7 +22,7 @@ print(lines[0])
 os.makedirs("deployjar", exist_ok=True)
 
 #bat파일 생성
-f = open("executeBae.bat", 'w')
+f = open("compression.bat", 'w')
 f.write("jar cvf deployjar/deployJar.jar ")
 
 #치환한 문자열들
