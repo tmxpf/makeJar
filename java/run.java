@@ -18,10 +18,9 @@ public class run {
 
     private static void runProcess() throws IOException {
         final String[][] COMPARE_STR_ARR = {
-                {"beforeCustomTest1", "afterCustomTest1"}
-                , {"beforeCustomTest2", "afterCustomTest2"}
-                ,{"beforeCustomTest3", "afterCustomTest3"}
-                , {"beforeCustomTest4", "afterCustomTest4"}
+                 {"/trunk/src/", "WebContent/WEB-INF/classes/"}
+                ,{"/trunk/", ""}
+				,{".java", ".class"}
         };
 
         Scanner scanner = null;
@@ -39,8 +38,10 @@ public class run {
                 String convertedPath = "";
 
                 System.out.println("before path : " + textLine);
-                convertedPath = textLine.replace(COMPARE_STR_ARR[3][0], COMPARE_STR_ARR[3][1])
-                                                .concat(" ");
+                convertedPath = textLine.replace(COMPARE_STR_ARR[0][0], COMPARE_STR_ARR[0][1])
+										.replace(COMPARE_STR_ARR[1][0], COMPARE_STR_ARR[1][1])
+										.replace(COMPARE_STR_ARR[2][0], COMPARE_STR_ARR[2][1])
+                                        .concat(" ");
 
                 resultPath.add(convertedPath);
                 System.out.println("after path : " + convertedPath);
