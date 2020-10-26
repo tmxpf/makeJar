@@ -20,7 +20,7 @@ public class run {
         final String[][] COMPARE_STR_ARR = {
                  {"/trunk/src/", "WebContent/WEB-INF/classes/"}
                 ,{"/trunk/", ""}
-				,{".java", ".class"}
+		,{".java", ".class"}
         };
 
         Scanner scanner = null;
@@ -39,8 +39,8 @@ public class run {
 
                 System.out.println("before path : " + textLine);
                 convertedPath = textLine.replace(COMPARE_STR_ARR[0][0], COMPARE_STR_ARR[0][1])
-										.replace(COMPARE_STR_ARR[1][0], COMPARE_STR_ARR[1][1])
-										.replace(COMPARE_STR_ARR[2][0], COMPARE_STR_ARR[2][1])
+					.replace(COMPARE_STR_ARR[1][0], COMPARE_STR_ARR[1][1])
+					.replace(COMPARE_STR_ARR[2][0], COMPARE_STR_ARR[2][1])
                                         .concat(" ");
 
                 resultPath.add(convertedPath);
