@@ -28,7 +28,7 @@ public class run {
         Set<String> resultPath = new HashSet<>();
 
         try {
-            // svn에서 가져온 파일경로 모음 오픈
+            // Open the file path from svn
             File svnPathFile = new File("filePath.txt");
             scanner = new Scanner(svnPathFile);
 
@@ -48,11 +48,13 @@ public class run {
             }
             System.out.println("=============end : path transformation=============");
 
-            //jar파일 만들기 위한 명령어 입력 및 batch파일 생성
+            // command input and create a batch file to create a jar file
             File resultPathFile = new File("compression.bat");
             bufferedWriter = new BufferedWriter(new FileWriter(resultPathFile));
 
             if(resultPathFile.isFile() && resultPathFile.canWrite()) {
+		bufferedWriter.write("@echo off");
+		bufferedWriter.write("\r\n");
                 bufferedWriter.write("jar cvf deployjar/deployJar.jar ");
 
                 System.out.println("=============start : create batch command=============");
@@ -64,6 +66,13 @@ public class run {
                         System.out.println(text);
                     }
                 }
+		    
+		bufferedWriter.write("\r\n");
+		bufferedWriter.write("cd deployjar ");
+		bufferedWriter.write("\r\n");
+		bufferedWriter.write("jar xvf deployJar.jar ");
+		bufferedWriter.write("\r\n");
+		bufferedWriter.write("pause");
                 System.out.println("=============end : create batch command=============");
             }
 
